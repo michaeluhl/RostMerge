@@ -26,7 +26,7 @@ def export_roster(filename:str, roster: Sequence[Any], age_year: int) -> None:
     for row in roster:
         r = list(row[:2])
         r.append(age_year - row[2].year)
-        r.append('Current' if row[3] else 'Not Assoc')
+        r.append('Current' if row[3] else 'Lapsed' if row[4] else 'Unknown')
         r.append(row[4])
         r.append('Current' if row[5] else '')
         r.append(str(not row[6]))
